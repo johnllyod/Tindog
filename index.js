@@ -1,37 +1,44 @@
 const distanceFromTop = window.scrollY || window.pageYOffset;
-var topNav = document.getElementById("TopNav");
-var topNavCTA = document.getElementById("TopNavCTA");
-var topNavLogo = document.getElementById("TopNavLogo");
-var topNavBtns = document.getElementById("TopNavBtns");
+var topNavScrolled = document.getElementById("TopNavScrolled");
 
 window.addEventListener("scroll", () => {
   if (window.scrollY == 0) {
-    topNav.style.background = "none";
-    topNav.style.borderRadius = "0px";
-    topNav.style.margin = "0px 0px";
-    topNav.style.zIndex = 2;
-    topNavBtns.style.color = "#ff6254";
-    topNav.classList.remove("topNavScroll");
-    topNavCTA.classList.remove("btnCTA2");
-    topNavCTA.classList.add("btnCTA");
-    topNavLogo.src = "img/tindog.png";
-    topNavBtns.children[0].style.color = "#fff";
-    topNavBtns.children[1].style.color = "#fff";
-    topNavBtns.children[2].style.color = "#fff";
-  } else if (window.scrollY > 0 && window.scrollY < 700) {
-    topNav.style.zIndex = -1;
-  } else if (window.scrollY > 700) {
-    topNav.style.zIndex = 2;
-    topNavBtns.children[0].style.color = "#ff6254";
-    topNavBtns.children[1].style.color = "#ff6254";
-    topNavBtns.children[2].style.color = "#ff6254";
-    topNav.classList.add("topNavScroll");
-    topNavCTA.classList.remove("btnCTA");
-    topNavCTA.classList.add("btnCTA2");
-    topNavLogo.src = "img/tindog-colored.png";
-    topNav.style.background = "#fff";
-    topNav.style.borderRadius = "50px";
-    topNav.style.margin = "0px 100px";
+    topNavScrolled.style.display = "none";
+  } else if (window.scrollY > 0 && window.scrollY < 600) {
+    topNavScrolled.style.display = "none";
+  } else if (window.scrollY > 600) {
+    topNavScrolled.style.display = "unset";
   }
-  console.log(topNavBtns.children[1]);
 });
+
+//Carousel size adjust
+var carouselItems = document.querySelectorAll(".testimonialContainer");
+var carouselContainer = document.getElementById("CarouselContainer");
+
+function CarouselWidth() {
+  carouselContainer.style.width = carouselItems[0].offsetWidth + "px";
+}
+
+CarouselWidth();
+
+//Carosel Function
+function MoveCarousel(section) {
+  var carouselBtns = document.getElementById("CarouselBtns");
+  sectionToGo = carouselItems[section - 1];
+  if (!sectionToGo) return;
+
+  sectionToGo.scrollIntoView({
+    behavior: "smooth",
+    inline: "center",
+    block: "nearest",
+  });
+
+  for (let i = 0; i < carouselBtns.children.length; i++) {
+    carouselBtns.children[i].children[0].classList.remove(
+      "carouselBtnSelected",
+    );
+  }
+  carouselBtns.children[section - 1].children[0].classList.add(
+    "carouselBtnSelected",
+  );
+}
