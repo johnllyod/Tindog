@@ -7,12 +7,17 @@ var topNavBtns = document.getElementById("TopNavBtns");
 window.addEventListener("scroll", () => {
   if (window.scrollY == 0) {
     topNav.style.background = "none";
+    topNav.style.borderRadius = "0px";
+    topNav.style.margin = "0px 0px";
     topNav.style.zIndex = 2;
     topNavBtns.style.color = "#ff6254";
     topNav.classList.remove("topNavScroll");
     topNavCTA.classList.remove("btnCTA2");
     topNavCTA.classList.add("btnCTA");
     topNavLogo.src = "img/tindog.png";
+    topNavBtns.children[0].style.color = "#fff";
+    topNavBtns.children[1].style.color = "#fff";
+    topNavBtns.children[2].style.color = "#fff";
   } else if (window.scrollY > 0 && window.scrollY < 700) {
     topNav.style.zIndex = -1;
   } else if (window.scrollY > 700) {
