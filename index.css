@@ -1,0 +1,196 @@
+html,
+body {
+  padding: 0 0vw;
+  margin: 0;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  background: #f29d6a;
+  background: linear-gradient(
+    90deg,
+    rgba(242, 157, 106, 1) 0%,
+    rgba(253, 104, 86, 1) 100%
+  );
+  color: #fff;
+}
+
+@font-face {
+  font-family: "Oliver-Regular";
+  src:
+    url("font/Oliver-Regular.woff2") format("woff2"),
+    url("fonts/Oliver-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+.oliverRegular {
+  font-family: "Oliver-Regular", sans-serif;
+}
+
+.btn {
+  text-decoration: none;
+  color: #fff;
+}
+
+.btnCTA {
+  text-decoration: none;
+  color: #ff6254;
+  padding: 16px 5%;
+  border-radius: 50px;
+  background-color: #fff;
+  font-size: 20px;
+}
+
+.btnCTA2 {
+  text-decoration: none;
+  color: #fff;
+  padding: 10px 4%;
+  border-radius: 20px;
+  background-color: #ff6254;
+}
+
+.topNav {
+  position: sticky;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: start;
+  padding: 0 5vw;
+}
+
+.navBtns {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  width: 100%;
+  gap: 16px;
+}
+
+.heroNav {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  position: relative;
+  margin-bottom: 128px;
+  padding: 0 5vw;
+}
+
+.headline {
+  max-width: 100%;
+}
+
+.appCTA img {
+  width: 166px;
+}
+
+.topCurve {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  transform: translate(0, -20%);
+}
+
+.footerCurve {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  transform: translate(0, -20%);
+}
+
+.contentBrands {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5vw;
+  padding: 0 0 6px;
+  background-color: #fff;
+}
+
+.testimonials {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 0 5vw;
+}
+
+.testimonialCard {
+  text-align: center;
+  border: 1px #000 solid;
+  border-radius: 10px;
+  padding: 16px;
+  box-shadow: 0px 5px #f39e6b;
+}
+
+.testimonialCard p {
+  color: #808080;
+}
+
+.testimonialCard h3 {
+  color: #000;
+}
+
+.testimonialStars {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.testimonialProfileImg {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.testimonialImgFront,
+.testimonialImgBack {
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+}
+
+.testimonialImgFront img,
+.testimonialImgBack img {
+  width: 100%;
+}
+
+.testimonialImgFront {
+  border: 2px #fff solid;
+  z-index: 1;
+}
+
+.testimonialImgBack {
+  transform: translate(-50%, 0%);
+  z-index: 0;
+}
+
+.content {
+  background-color: #fff;
+}
+
+.footer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: start;
+  gap: 64px;
+  padding: 128px 5vw;
+  position: relative;
+}
+
+.footerSection1 {
+  width: 100%;
+  max-width: 512px;
+}
+
+.footerSection1,
+.footerSection2,
+.footerSection3 {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+}
